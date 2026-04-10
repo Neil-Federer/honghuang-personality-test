@@ -14,7 +14,7 @@
 
 import { DIMENSIONS } from '../data/dimensions';
 import { PERSONALITY_MAP, type Personality } from '../data/personalities';
-import { QUESTIONS, type Question } from '../data/questions';
+import { QUESTIONS } from '../data/questions';
 
 /** 用户作答记录: questionId → 选中选项的 score */
 export type Answers = Record<number, number>;

@@ -11,7 +11,7 @@ type Page = 'landing' | 'quiz' | 'result';
 
 function App() {
   const [page, setPage] = useState<Page>('landing');
-  const [answers, setAnswers] = useState<Answers>({});
+  const [, setAnswers] = useState<Answers>({});
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [fadeClass, setFadeClass] = useState('fade-in');
 

@@ -13,7 +13,6 @@
 import { describe, it, expect } from 'vitest';
 import {
   calculateResult,
-  generateMockAnswers,
   simulateDistribution,
   type Answers,
 } from './scoring';
