@@ -1,0 +1,33 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "洪荒人格测试 — 四维度定义",
+  "description": "Sprint 1 冻结，后续 Sprint 禁止修改",
+  "frozen_at": "2026-04-10",
+  "dimensions": [
+    {
+      "id": "hun_po",
+      "name": "魂魄之辩",
+      "poleA": { "code": "H", "name": "游魂" },
+      "poleB": { "code": "P", "name": "定魄" }
+    },
+    {
+      "id": "ling_zhi",
+      "name": "灵智之分",
+      "poleA": { "code": "L", "name": "通灵" },
+      "poleB": { "code": "Z", "name": "执智" }
+    },
+    {
+      "id": "qing_li",
+      "name": "情理之争",
+      "poleA": { "code": "Q", "name": "殉情" },
+      "poleB": { "code": "I", "name": "循理" }
+    },
+    {
+      "id": "dong_jing",
+      "name": "动静之择",
+      "poleA": { "code": "D", "name": "躁动" },
+      "poleB": { "code": "J", "name": "守静" }
+    }
+  ]
+}

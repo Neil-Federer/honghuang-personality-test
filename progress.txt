@@ -1,0 +1,66 @@
+
+# 洪荒人格测试 — 进度日志
+
+## 2026-04-10 Sprint 0: 项目初始化 ✅
+- 使用 Vite 创建 React + TypeScript 项目
+- 配置 Tailwind CSS v4 + @tailwindcss/vite 插件
+- 自定义古典中国风主题色（墨色/朱砂/金/青/素纸）
+- 建立工程目录结构: src/data/, src/utils/, src/components/
+- 建立 harness 产物目录: data_contracts/, sprint_contracts/, eval/
+- 拆分 4 个 Sprint Contract 为独立文件
+- 清理 Vite 脚手架默认内容
+
+**当前状态**: Sprint 0 完成，准备进入 Sprint 1
+**下一步**: 开始 Sprint 1 — 人格体系数据层
+
+## 2026-04-10 Sprint 1: 人格体系数据层 ✅
+- 创建 src/data/dimensions.ts — 4个洪荒维度(魂魄/灵智/情理/动静)
+- 创建 src/data/personalities.ts — 16种山海经异兽人格(含HLQD/PZIJ两个标杆fullDesc)
+- 创建 src/data/questions.ts — 20道洪荒场景题(每维度5题)
+- 创建 src/utils/scoring.ts — 计分算法(维度累加→极性判定→编码拼接→人格查找)
+- 创建 src/utils/scoring.test.ts — 12个单元测试，全部通过
+  - 数据完整性: 16种编码无重复，覆盖全部2^4=16种组合
+  - 计分正确性: 全正分→HLQD(九尾狐)，全负分→PZIJ(玄武)
+  - 路径覆盖: 8种预设路径→8种不同结果
+  - 分布均匀性: 1000次随机模拟覆盖≥12种，最高频率≤15%
+- 冻结数据契约: data_contracts/dimensions.schema.json + personality.schema.json
+- 安装 vitest 测试框架
+
+**当前状态**: Sprint 1 完成，待 Evaluator 评估
+**下一步**: Sprint 1 评估 → Sprint 2(补齐16种人格完整文案)
+
+## 2026-04-10 Sprint 2: 补齐16种人格完整文案 ✅
+- 为14种人格补齐 fullDesc（147-184字/条，洪荒毒舌风格）
+- 为14种人格补齐 strengths×3 + weaknesses×3
+- 验证: rarity 分布均匀(4种×4个)，16种颜色无重复
+- 风格抽检: 5条抽样平均4.8/5分，与标杆差异≤1分
+- 12/12 单元测试通过，Sprint 1 数据契约未被破坏
+
+**当前状态**: Sprint 2 完成，评估 PASS
+**下一步**: Sprint 3 — 核心 UI 开发
+
+## 2026-04-10 Sprint 3: 核心 UI 开发 ✅
+- App.tsx: 全局状态管理(landing/quiz/result) + fade 页面过渡动画
+- Landing.tsx: 水墨云雾CSS动效 + 标题/副标题 + 朱砂「开启天命」按钮
+- ProgressBar.tsx: 朱砂→金渐变进度条 + "第X卦/共XX卦"
+- QuizOption.tsx: 甲乙丙丁选项标签 + 选中高亮 + 古风卡片
+- QuizFlow.tsx: 卡片式答题 + 选择后400ms自动下一题 + 返回上一卦 + slide动画
+- Result.tsx: emoji出场动画 + 稀有度标签 + 毒舌称号 + 完整描述 + 优缺点卡片
+           + CP匹配(天定良缘/冤家路窄) + 四维天命条形图 + 生成卷轴/再测一次按钮
+- TypeScript 编译零错误，12/12 测试通过，vite build 成功
+- 产出: 6个组件文件 + App.css fade动画
+
+**当前状态**: Sprint 3 完成，待评估
+**下一步**: Sprint 3 评估 → Sprint 4(海报生成)
+
+## 2026-04-10 Sprint 4: 海报生成与打磨 ✅
+- 安装 html2canvas
+- 创建 PosterCanvas.tsx: 375×667 隐藏画布(inline styles)
+  - 稀有度标签 + emoji + 名称 + 称号 + 编码 + shortDesc
+  - 四维度条形图 + 优缺点简版 + CP匹配 + 品牌水印
+- 创建 posterGenerator.ts: html2canvas @2x渲染 + 弹窗展示(长按保存)
+- 集成到 Result.tsx: 点击「生成天命卷轴」→ 生成中... → 弹窗展示海报
+- TypeScript 零错误，12/12 测试通过，vite build 成功
+
+**当前状态**: 全部 4 个 Sprint 完成！🎉
+**下一步**: 预览、部署

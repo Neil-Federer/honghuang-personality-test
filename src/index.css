@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* ===== 洪荒人格测试 — 古典中国风主题 ===== */
+
+@theme {
+  /* 主色系：墨色、朱砂、金、青、素纸 */
+  --color-ink: #2C2C2C;
+  --color-ink-light: #4A4A4A;
+  --color-cinnabar: #C73B3B;
+  --color-cinnabar-light: #E05555;
+  --color-cinnabar-dark: #9A2E2E;
+  --color-gold: #C9A96E;
+  --color-gold-light: #DCC08A;
+  --color-gold-dark: #A88B50;
+  --color-cyan: #5B8C8A;
+  --color-cyan-light: #7BB0AE;
+  --color-cyan-dark: #3D6B69;
+  --color-paper: #F5F0E8;
+  --color-paper-dark: #E8DFD0;
+  --color-paper-light: #FAF7F2;
+
+  /* 语义色 */
+  --color-primary: #C73B3B;
+  --color-secondary: #C9A96E;
+  --color-bg: #F5F0E8;
+  --color-text: #2C2C2C;
+  --color-text-muted: #7A7067;
+
+  /* 字体 */
+  --font-sans: 'Noto Serif SC', 'STSong', 'SimSun', 'Songti SC', serif;
+  --font-display: 'Noto Serif SC', 'STSong', 'SimSun', 'Songti SC', serif;
+}
+
+/* 全局重置 */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
+}

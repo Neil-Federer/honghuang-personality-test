@@ -1,0 +1,25 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "洪荒人格测试 — 16种人格编码映射",
+  "description": "Sprint 1 冻结 code/beast/title/emoji/shortDesc，Sprint 2 补齐 fullDesc 等",
+  "frozen_at": "2026-04-10",
+  "personalities": [
+    { "code": "HLQD", "beast": "九尾狐", "emoji": "🦊", "title": "骚断腿的九尾交际花" },
+    { "code": "HLQJ", "beast": "麒麟", "emoji": "🦌", "title": "圣母心泛滥的仁兽班长" },
+    { "code": "HLID", "beast": "鲲鹏", "emoji": "🐋", "title": "上天入海的战略型话痨" },
+    { "code": "HLIJ", "beast": "凤凰", "emoji": "🔥", "title": "高冷到涅槃的理想主义鸟" },
+    { "code": "HZQD", "beast": "饕餮", "emoji": "😋", "title": "暴食暴走的快乐莽夫" },
+    { "code": "HZQJ", "beast": "帝江", "emoji": "🫥", "title": "没脸没心的佛系混子" },
+    { "code": "HZID", "beast": "毕方", "emoji": "🐦‍🔥", "title": "见谁烧谁的执行力怪物" },
+    { "code": "HZIJ", "beast": "应龙", "emoji": "🐉", "title": "靠谱到无聊的卷王之王" },
+    { "code": "PLQD", "beast": "穷奇", "emoji": "🐺", "title": "反骨仔本仔的叛逆独狼" },
+    { "code": "PLQJ", "beast": "相柳", "emoji": "🐍", "title": "九头蛇的纠结人生" },
+    { "code": "PLID", "beast": "梼杌", "emoji": "🦏", "title": "一条道走到黑的倔驴" },
+    { "code": "PLIJ", "beast": "白泽", "emoji": "📚", "title": "活了三万年的百科全书" },
+    { "code": "PZQD", "beast": "刑天", "emoji": "⚔️", "title": "砍了头还在蹦迪的狠人" },
+    { "code": "PZQJ", "beast": "混沌", "emoji": "🌫️", "title": "一坨看不清的佛系本佛" },
+    { "code": "PZID", "beast": "烛龙", "emoji": "🌑", "title": "睁眼白天闭眼黑夜的社恐之神" },
+    { "code": "PZIJ", "beast": "玄武", "emoji": "🐢", "title": "装死一万年的老阴比" }
+  ]
+}

@@ -1,0 +1,47 @@
+
+{
+  "project": "洪荒人格测试 H5",
+  "dimensions": [
+    {
+      "name": "风格一致性",
+      "maxScore": 25,
+      "threshold": 20,
+      "focus": "文案是否全部符合洪荒毒舌风格，与标杆偏差度",
+      "reason": "核心卖点，低于80%用户体验断裂"
+    },
+    {
+      "name": "功能完整性",
+      "maxScore": 25,
+      "threshold": 22,
+      "focus": "当前Sprint所有验收标准是否达成",
+      "reason": "功能缺失直接不可用"
+    },
+    {
+      "name": "数据一致性",
+      "maxScore": 20,
+      "threshold": 18,
+      "focus": "维度-题目-计分-结果四者是否严格对齐",
+      "reason": "计分错误=测试核心逻辑崩溃"
+    },
+    {
+      "name": "移动端适配",
+      "maxScore": 15,
+      "threshold": 12,
+      "focus": "主流手机视口是否正常显示",
+      "reason": "目标平台是手机"
+    },
+    {
+      "name": "视觉风格",
+      "maxScore": 15,
+      "threshold": 10,
+      "focus": "是否符合古典中国风调性",
+      "reason": "锦上添花但不能太丑"
+    }
+  ],
+  "passCondition": "总分≥80 且 所有维度均≥硬阈值",
+  "styleCalibration": {
+    "5_perfect": "你就是洪荒最会装死的那块石头，连女娲补天都懒得用你 — 洪荒元素✓ 毒舌✓ 自嘲✓",
+    "3_passing": "你是一只安静的玄武，喜欢独处 — 有异兽但不毒舌，太正经",
+    "1_failing": "你是一个内向的人，不太喜欢社交 — 完全脱离洪荒主题"
+  }
+}
