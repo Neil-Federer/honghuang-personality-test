@@ -7,7 +7,14 @@ interface AllTypesProps {
   onBack: () => void;
 }
 
-const RARITY_ORDER = ['SSR · 上古神兽', 'SR · 远古异兽', 'R · 洪荒灵兽', 'N · 蛮荒走兽'];
+const RARITY_ORDER = ['上古凶兽', '远古灵兽', '洪荒瑞兽', '太古妖兽'];
+
+const RARITY_LABEL: Record<string, { tag: string; desc: string }> = {
+  '上古凶兽': { tag: 'SSR', desc: '上古凶兽' },
+  '远古灵兽': { tag: 'SR', desc: '远古灵兽' },
+  '洪荒瑞兽': { tag: 'R', desc: '洪荒瑞兽' },
+  '太古妖兽': { tag: 'N', desc: '太古妖兽' },
+};
 
 const AllTypes: FC<AllTypesProps> = ({ currentCode, onBack }) => {
   return (
@@ -25,15 +32,14 @@ const AllTypes: FC<AllTypesProps> = ({ currentCode, onBack }) => {
         const group = PERSONALITIES.filter((p) => p.rarity === rarity);
         if (group.length === 0) return null;
 
-        // 提取简短稀有度标签
-        const rarityLabel = rarity.split(' · ')[0]; // SSR / SR / R / N
+        const label = RARITY_LABEL[rarity];
 
         return (
           <div key={rarity} className="w-full mb-6">
             {/* 稀有度分隔标题 */}
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs font-bold text-gold tracking-wider">{rarityLabel}</span>
-              <span className="text-xs text-text-muted">{rarity.split(' · ')[1]}</span>
+              <span className="text-xs font-bold text-gold tracking-wider">{label.tag}</span>
+              <span className="text-xs text-text-muted">{label.desc}</span>
               <div className="flex-1 h-px bg-paper-dark" />
             </div>
 
