@@ -6,8 +6,9 @@ import { calculateResult, type Answers, type ScoreResult } from './utils/scoring
 import Landing from './components/Landing';
 import QuizFlow from './components/QuizFlow';
 import Result from './components/Result';
+import AllTypes from './components/AllTypes';
 
-type Page = 'landing' | 'quiz' | 'result';
+type Page = 'landing' | 'quiz' | 'result' | 'alltypes';
 
 function App() {
   const [page, setPage] = useState<Page>('landing');
@@ -20,6 +21,7 @@ function App() {
     setTimeout(() => {
       setPage(target);
       setFadeClass('fade-in');
+      window.scrollTo(0, 0);
     }, 300);
   }, []);
 
@@ -46,6 +48,14 @@ function App() {
     navigateTo('landing');
   }, [navigateTo]);
 
+  const handleViewAllTypes = useCallback(() => {
+    navigateTo('alltypes');
+  }, [navigateTo]);
+
+  const handleBackToResult = useCallback(() => {
+    navigateTo('result');
+  }, [navigateTo]);
+
   return (
     <div className={`min-h-dvh flex flex-col ${fadeClass}`}>
       {page === 'landing' && (
@@ -62,6 +72,13 @@ function App() {
           result={result}
           personalityMap={PERSONALITY_MAP}
           onRestart={handleRestart}
+          onViewAllTypes={handleViewAllTypes}
+        />
+      )}
+      {page === 'alltypes' && (
+        <AllTypes
+          currentCode={result?.code}
+          onBack={handleBackToResult}
         />
       )}
     </div>

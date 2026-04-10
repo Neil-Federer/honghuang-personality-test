@@ -9,9 +9,10 @@ interface ResultProps {
   result: ScoreResult;
   personalityMap: Record<string, Personality>;
   onRestart: () => void;
+  onViewAllTypes?: () => void;
 }
 
-const Result: FC<ResultProps> = ({ result, personalityMap, onRestart }) => {
+const Result: FC<ResultProps> = ({ result, personalityMap, onRestart, onViewAllTypes }) => {
   const p = result.personality;
   const bestMatchP = personalityMap[p.bestMatch];
   const worstMatchP = personalityMap[p.worstMatch];
@@ -175,6 +176,15 @@ const Result: FC<ResultProps> = ({ result, personalityMap, onRestart }) => {
         >
           🔄 再测一次
         </button>
+        {onViewAllTypes && (
+          <button
+            onClick={onViewAllTypes}
+            className="w-full py-3 bg-transparent border border-paper-dark text-text-muted text-sm
+                       tracking-wider rounded-md hover:bg-paper-dark/50 active:scale-[0.98] transition-all"
+          >
+            📖 查看全部类型
+          </button>
+        )}
       </div>
 
       {/* 底部水印 */}
